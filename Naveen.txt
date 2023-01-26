@@ -1,0 +1,123 @@
+mysql> use hospital;
+Database changed
+mysql> desc hospital;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| patientname    | varchar(16) | YES  |     | NULL    |       |
+| roomnumber     | int(20)     | YES  |     | NULL    |       |
+| registernumber | int(12)     | YES  |     | NULL    |       |
+| dateofbirth    | date        | YES  |     | NULL    |       |
+| age            | int(31)     | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+5 rows in set (0.06 sec)
+
+mysql> create database student;
+ERROR 1007 (HY000): Can't create database 'student'; database exists
+mysql> use student;
+Database changed
+mysql> create table student(regno int(12),name varchar(27),gender char(12),DOB DATE,mobileno int(10),city varchar(12));
+ERROR 1050 (42S01): Table 'student' already exists
+mysql> desc student;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| regno    | int(12)     | YES  |     | NULL    |       |
+| name     | varchar(27) | YES  |     | NULL    |       |
+| gender   | char(12)    | YES  |     | NULL    |       |
+| DOB      | date        | YES  |     | NULL    |       |
+| mobileno | int(10)     | YES  |     | NULL    |       |
+| city     | varchar(12) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+6 rows in set (0.06 sec)
+
+mysql> alter table student ADD address varchar(23);
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| regno    | int(12)     | YES  |     | NULL    |       |
+| name     | varchar(27) | YES  |     | NULL    |       |
+| gender   | char(12)    | YES  |     | NULL    |       |
+| DOB      | date        | YES  |     | NULL    |       |
+| mobileno | int(10)     | YES  |     | NULL    |       |
+| city     | varchar(12) | YES  |     | NULL    |       |
+| address  | varchar(23) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+7 rows in set (0.07 sec)
+
+mysql> alter table student
+    -> drop column city;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| regno    | int(12)     | YES  |     | NULL    |       |
+| name     | varchar(27) | YES  |     | NULL    |       |
+| gender   | char(12)    | YES  |     | NULL    |       |
+| DOB      | date        | YES  |     | NULL    |       |
+| mobileno | int(10)     | YES  |     | NULL    |       |
+| address  | varchar(23) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+6 rows in set (0.02 sec)
+
+mysql> alter table student;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> desc student;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| regno    | int(12)     | YES  |     | NULL    |       |
+| name     | varchar(27) | YES  |     | NULL    |       |
+| gender   | char(12)    | YES  |     | NULL    |       |
+| DOB      | date        | YES  |     | NULL    |       |
+| mobileno | int(10)     | YES  |     | NULL    |       |
+| address  | varchar(23) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+6 rows in set (0.06 sec)
+
+mysql> alter table student ADD city varchar(12);
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| regno    | int(12)     | YES  |     | NULL    |       |
+| name     | varchar(27) | YES  |     | NULL    |       |
+| gender   | char(12)    | YES  |     | NULL    |       |
+| DOB      | date        | YES  |     | NULL    |       |
+| mobileno | int(10)     | YES  |     | NULL    |       |
+| address  | varchar(23) | YES  |     | NULL    |       |
+| city     | varchar(12) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+7 rows in set (0.06 sec)
+
+mysql> alter table student
+    -> drop address;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| regno    | int(12)     | YES  |     | NULL    |       |
+| name     | varchar(27) | YES  |     | NULL    |       |
+| gender   | char(12)    | YES  |     | NULL    |       |
+| DOB      | date        | YES  |     | NULL    |       |
+| mobileno | int(10)     | YES  |     | NULL    |       |
+| city     | varchar(12) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+6 rows in set (0.07 sec)
+
+mysql> create table hospital(patientname varchar(16),roomnumber int(20),registernumber int((12),dateofbirth DATE,age int(31));
+
